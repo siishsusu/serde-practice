@@ -70,7 +70,11 @@ fn main() {
     file.read_to_string(&mut json_str).unwrap();
 
     let request: Request = serde_json::from_str(&json_str).unwrap();
-    println!("{:?}", request)
+    println!("{:?}", request);
 
+    let yaml_str = to_yaml(&request).unwrap();
+    println!("YAML:\n{}", yaml_str);
 
+    let toml_str = to_toml(&request).unwrap();
+    println!("TOML:\n{}", toml_str);
 }
