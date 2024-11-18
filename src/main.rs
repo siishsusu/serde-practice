@@ -70,6 +70,7 @@ fn main() {
     file.read_to_string(&mut json_str).unwrap();
 
     let request: Request = serde_json::from_str(&json_str).unwrap();
+    println!("{:?}", request)
 
 
 }
